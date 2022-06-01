@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Donghae Blog</h1>
+    
+    <div class="create_write">
+        <a href="{% url 'create'%}"><div class="create_btn">🙋‍♂️글쓰기🙋‍♂️</div></a>
+    </div>
+
+    {% for write in all_write %}
+    <div class="all_write">
+        <a href = "{% url 'detail' write.id %}">
+        <div>{{write.id}}</div><br>
+        <div>{{write.title}}</div><br>
+        <div>{{write.contents}}</div><br>
+        <div>{{write.updated_at|date:"Y.m.d"}}</div><br>
+        <a>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
